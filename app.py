@@ -6,14 +6,14 @@ Phase 7+ : Alarme sonore + posture de la tête (pitch/yaw/roll)
 import time
 
 import cv2
-from detector import FaceDetector
+from core.detector import FaceDetector
 from utils import (
     LEFT_EYE_INDICES, RIGHT_EYE_INDICES, MOUTH_INDICES,
     average_ear, mouth_aspect_ratio, rotation_matrix_to_euler_angles,
     EyeStateTracker, YawnTracker, HeadPoseTracker, PerclosTracker,
 )
-from fatigue import FatigueScorer
-from alarm import AlarmPlayer
+from core.scoring import FatigueScorer
+from core.alarm import AlarmPlayer
 
 # Seuil de score à partir duquel l'alarme sonore se déclenche.
 # (Au-delà de ce seuil, le niveau "Alarme" est atteint - voir fatigue.py)
